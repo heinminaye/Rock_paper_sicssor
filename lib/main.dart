@@ -30,7 +30,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List imgListO = ['paper', 'rock', 'scissor'];
-  String M = 'rock';
   List imgListT = ['scissor', 'paper', 'rock'];
   String firstImg = '';
   String secondImg = '';
@@ -41,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void startList() {
     setState(() {
       imgListT.shuffle();
-      fourthImg = imgListT[1];
+      fourthImg = imgListT[0];
     });
   }
 
@@ -159,6 +158,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       selectImg = imgListO[0];
                     });
+                    startList();
                   },
                   child: Image.asset(
                     'images/$firstImg.png',
@@ -173,6 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       selectImg = imgListO[1];
                     });
+                    startList();
                   },
                   child: Image.asset(
                     'images/$secondImg.png',
@@ -187,6 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     setState(() {
                       selectImg = imgListO[2];
                     });
+                    startList();
                   },
                   child: Image.asset(
                     'images/$thirdImg.png',
@@ -201,16 +203,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    startList();
-                  },
-                  child: Text('Start'),
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(),
-                    padding: const EdgeInsets.all(24),
-                  ),
-                ),
                 ElevatedButton(
                   onPressed: () {
                     check();
