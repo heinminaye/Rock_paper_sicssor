@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Home'),
     );
   }
 }
@@ -207,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     check();
                   },
-                  child: Text('Chcek'),
+                  child: Text('Check'),
                   style: ElevatedButton.styleFrom(
                     shape: const CircleBorder(),
                     padding: const EdgeInsets.all(24),
